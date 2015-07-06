@@ -1,0 +1,23 @@
+<head>
+  <title>collab-editor</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor Collab Editor!</h1>
+  {{> loginButtons}}
+  {{#if currentUser}}
+      <form class="doc-starter">
+          <input type="text" name="docname" placeholder="Type to documents" />
+      </form>
+    <br/>
+    {{#each docs}}
+      {{> doc}} <!--render the template task-->
+    {{/each}}
+  {{/if}}
+</body>
+
+<template name="doc">
+  <button class="delete">Delete {{name}}</button>
+  <br/>
+  <textarea class="text-content">{{content}}</textarea>
+</template>
